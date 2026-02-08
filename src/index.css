@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════
+   DESIGN SYSTEM — Asena Türkay
+   ═══════════════════════════════════════════ */
+@theme {
+  --color-charcoal: #2d2d2d;
+  --color-charcoal-light: #4a4a4a;
+  --color-charcoal-dark: #141414;
+  --color-warm: #9a8c7a;
+  --color-warm-light: #c4b5a3;
+  --color-warm-lighter: #e8ddd0;
+  --color-warm-dark: #7d7060;
+  --color-cream: #fafaf8;
+  --color-surface: #f4f2ed;
+  --color-surface-dark: #eae6df;
+  --color-muted: #8a8a8a;
+
+  --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ── Lenis Smooth Scroll ── */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* ── Base ── */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-charcoal);
+  background: var(--color-cream);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-warm-lighter);
+  color: var(--color-charcoal-dark);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-warm);
+  border-radius: 10px;
+}
+
+/* ── Typography ── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.06;
+}
+
+/* ── Focus ── */
+*:focus-visible {
+  outline: 1px solid var(--color-warm);
+  outline-offset: 3px;
+}
+
+/* ── Marquee Animation ── */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@utility animate-marquee {
+  animation: marquee-scroll 50s linear infinite;
+}
