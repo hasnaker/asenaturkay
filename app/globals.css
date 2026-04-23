@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-cormorant: "Cormorant Garamond", Georgia, serif;
+  --font-inter: "Inter", system-ui, sans-serif;
+}
+
+html, body {
+  background: #FDF8F3;
+  color: #3A3937;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection { background: #E8D5C4; color: #3A3937; }
+
+@layer components {
+  .container-soft { @apply mx-auto w-full max-w-6xl px-6; }
+  .container-prose { @apply mx-auto w-full max-w-3xl px-6; }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-roseDeep px-6 py-3 font-sans text-sm font-medium text-cream transition-all hover:bg-rose hover:shadow-glow;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-full border border-blush px-6 py-3 font-sans text-sm font-medium text-ink transition-all hover:bg-linen;
+  }
+
+  .card-soft {
+    @apply rounded-3xl bg-white/70 backdrop-blur-sm p-8 shadow-soft transition-all hover:shadow-glow;
+  }
+
+  .title-serif {
+    @apply font-serif font-light tracking-tight text-ink;
+  }
+
+  .eyebrow {
+    @apply text-xs font-sans uppercase tracking-[0.25em] text-muted;
+  }
+}
+
+/* Gentle fade-in for page transitions */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.6s ease-out both; }
+
+/* Subtle gradient blobs used on pages as backdrop */
+.blob {
+  position: absolute;
+  pointer-events: none;
+  filter: blur(80px);
+  opacity: 0.55;
+  border-radius: 9999px;
+}
