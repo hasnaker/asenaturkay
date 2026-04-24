@@ -126,6 +126,70 @@ export default function HakkimdaPage() {
         </p>
       </Article>
 
+      {/* Credentials timeline */}
+      <section className="bg-ink text-cream py-24 lg:py-32 mt-24">
+        <div className="container-wide">
+          <div className="max-w-2xl mb-16">
+            <div className="flex items-center gap-4 mb-6">
+              <span className="label-number !text-cream/40">04</span>
+              <span className="eyebrow !text-cream/60">Akademik & Klinik</span>
+            </div>
+            <h2 className="font-display font-light text-5xl sm:text-6xl leading-[1.05]">
+              Birikim ve{" "}
+              <span className="italic text-clay">duruş</span>.
+            </h2>
+          </div>
+
+          <div className="grid gap-x-12 gap-y-0 md:grid-cols-2">
+            {[
+              {
+                tag: "Unvan",
+                title: "Doktorant Psikolojik Danışman",
+                body: "Psikolojik Danışma ve Rehberlik alanında doktora eğitimi; akademik araştırmayla klinik pratiğin kesişiminde çalışıyorum.",
+              },
+              {
+                tag: "Ekoller",
+                title: "Şema Terapi · BDT · Sanat Terapisi",
+                body: "Üç ekolü bireyin ihtiyacına göre sentezleyerek; hem semptomu hem de kökü olan uyumsuz şemaları birlikte ele alıyoruz.",
+              },
+              {
+                tag: "Dernek",
+                title: "Türk PDR Derneği · Genel Başkan Yardımcısı",
+                body: "Meslek standartlarının korunması, meslektaşlar arası dayanışma ve toplumsal fayda odaklı projelerin bilimsel koordinasyonu.",
+              },
+              {
+                tag: "Platform",
+                title: "upcore.io · Akademik & Bilimsel Danışman",
+                body: "Organizasyonel mimariyi JD-R (İş Talepleri-Kaynakları) ve S-BIT (Güçlü Yönlere Dayalı Kapsayıcı Çalışma) modelleriyle yapılandırma.",
+              },
+              {
+                tag: "Uzmanlık",
+                title: "Organizasyonel Psikoloji",
+                body: "Çalışan yaşam döngüsü, liderlik psikolojisi, psikolojik güvenlik ve kurumsal esenlik (well-being) projeleri.",
+              },
+              {
+                tag: "Değer",
+                title: "Etik Sınırlar · Gizlilik · Bilimsel Temel",
+                body: "Meslek etiği, mahremiyet ve kanıta dayalı yöntemler, pratiğimin tartışılmaz zemini.",
+              },
+            ].map((c, i) => (
+              <div
+                key={i}
+                className="py-10 border-b border-cream/15 last:border-0 md:[&:nth-last-child(-n+2)]:border-0"
+              >
+                <div className="eyebrow !text-clay mb-4">{c.tag}</div>
+                <h3 className="font-display text-2xl sm:text-3xl text-cream font-light mb-4">
+                  {c.title}
+                </h3>
+                <p className="text-cream/70 text-[15px] leading-[1.7] max-w-md">
+                  {c.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <CtaBand
         title="Tanışmak ister misiniz?"
         body="Danışmanlık, kurumsal iş birliği ya da atölye talepleriniz için size özel bir süreç tasarlayalım."

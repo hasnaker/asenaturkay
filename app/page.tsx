@@ -60,8 +60,8 @@ export default function HomePage() {
   return (
     <>
       {/* ======== HERO ======== */}
-      <section className="relative -mt-20 pt-20 bg-cream">
-        <div className="container-wide pt-12 pb-16 lg:pb-24 grid gap-12 lg:gap-20 lg:grid-cols-[1.15fr_1fr] lg:items-end">
+      <section className="relative bg-cream">
+        <div className="container-wide pt-8 lg:pt-12 pb-16 lg:pb-24 grid gap-12 lg:gap-20 lg:grid-cols-[1.15fr_1fr] lg:items-end">
           <div className="reveal">
             <div className="flex items-center gap-4 mb-10">
               <div className="rule" />
@@ -268,6 +268,117 @@ export default function HomePage() {
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ======== PROCESS ======== */}
+      <section className="relative bg-ink text-cream py-28 lg:py-40">
+        <div
+          aria-hidden
+          className="absolute inset-0 opacity-10 bg-cover bg-center"
+          style={{ backgroundImage: "url(/images/interior.jpg)" }}
+        />
+        <div className="relative container-wide">
+          <div className="max-w-2xl mb-20">
+            <div className="flex items-center gap-4 mb-6">
+              <span className="label-number !text-cream/40">04</span>
+              <span className="eyebrow !text-cream/60">Süreç</span>
+            </div>
+            <h2 className="font-display font-light text-5xl sm:text-6xl lg:text-7xl leading-[1.05]">
+              Birlikte yürüdüğümüz{" "}
+              <span className="italic text-clay">dört adım</span>.
+            </h2>
+          </div>
+
+          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                n: "01",
+                title: "İlk Görüşme",
+                body: "Tanışma ve ihtiyaç analizi. Süreci ve beklentileri birlikte netleştiriyoruz.",
+              },
+              {
+                n: "02",
+                title: "Hedef Belirleme",
+                body: "Akademik değerlendirme ve size özel bir yol haritası. Hangi ekollerin uygun olduğuna birlikte karar veriyoruz.",
+              },
+              {
+                n: "03",
+                title: "Derinleşme",
+                body: "Şema Terapi, BDT veya Sanat Terapisi ile köklere iniyor; uyumsuz kalıpları dönüştürüyoruz.",
+              },
+              {
+                n: "04",
+                title: "Kalıcı Dönüşüm",
+                body: "Seanslarda keşfedilen farkındalığın günlük hayata taşınması ve sağlıklı modların pekişmesi.",
+              },
+            ].map((s) => (
+              <div key={s.n} className="border-t border-cream/20 pt-8">
+                <div className="font-display font-light text-5xl text-clay mb-5">
+                  {s.n}
+                </div>
+                <h3 className="font-display text-2xl text-cream mb-3">
+                  {s.title}
+                </h3>
+                <p className="text-cream/70 text-[15px] leading-[1.7]">
+                  {s.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ======== FAQ PREVIEW ======== */}
+      <section className="container-wide py-24 lg:py-32">
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.3fr]">
+          <div>
+            <div className="flex items-center gap-4 mb-6">
+              <span className="label-number !text-2xl">05</span>
+              <span className="eyebrow">Sık Sorulan</span>
+            </div>
+            <h2 className="display-lg">
+              Başlamadan önce,
+              <br />
+              <span className="italic text-rust">merak edilenler</span>.
+            </h2>
+            <p className="mt-8 text-[16px] text-inkSoft leading-relaxed max-w-sm">
+              Süreç, gizlilik ve pratik detaylar için iletişim sayfasında daha
+              fazlasını bulabilirsiniz.
+            </p>
+            <Link href="/iletisim#faq" className="btn-link mt-8">
+              Tüm sorular ↗
+            </Link>
+          </div>
+
+          <ul className="divide-y divide-ink/10 border-y border-ink/10">
+            {[
+              {
+                q: "Seans ne kadar sürer?",
+                a: "Standart bir seans 50 dakikadır. Süreç çoğunlukla haftalık başlar; ihtiyaca göre uyarlanır.",
+              },
+              {
+                q: "Online seans yapılıyor mu?",
+                a: "Evet. Yurt dışından / şehir dışından bağlanan danışanlar için güvenli video platformları üzerinden görüşme sunuyoruz.",
+              },
+              {
+                q: "Randevu nasıl alınır?",
+                a: "Form, WhatsApp veya e-posta yoluyla ulaşabilirsiniz; 24 saat içinde size özel bir saat önerilir.",
+              },
+            ].map((f, i) => (
+              <li key={i} className="grid grid-cols-[auto_1fr] gap-6 py-8">
+                <span className="label-number !text-2xl">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3 className="font-display text-xl sm:text-2xl text-ink mb-3">
+                    {f.q}
+                  </h3>
+                  <p className="text-inkSoft text-[15px] leading-[1.75]">{f.a}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
