@@ -1,5 +1,4 @@
 export default function WhatsAppButton() {
-  // Numara belirlendiğinde güncellenecek — placeholder.
   const phone = "905000000000";
   const text = encodeURIComponent(
     "Merhaba, asenaturkay.com üzerinden randevu/bilgi almak istiyorum."
@@ -10,7 +9,7 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noreferrer"
       aria-label="WhatsApp"
-      className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-sageDeep text-white shadow-glow transition-transform hover:scale-105"
+      className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-forest text-cream shadow-frame transition-all hover:scale-105 hover:bg-ink"
     >
       <svg
         viewBox="0 0 24 24"

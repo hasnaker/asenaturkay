@@ -1,5 +1,11 @@
-import Blobs from "@/components/Blobs";
-import { Bullets, CtaStrip, PageHero, Prose } from "@/components/Section";
+import {
+  Article,
+  CtaBand,
+  DetailHero,
+  ImageBreak,
+  PullQuote,
+  SpecialtyList,
+} from "@/components/Section";
 
 export const metadata = {
   title: "Yetişkin Bireysel Psikoterapi ve Danışmanlık",
@@ -10,42 +16,56 @@ export const metadata = {
 export default function Page() {
   return (
     <>
-      <div className="relative">
-        <Blobs />
-        <PageHero
-          eyebrow="Bireysel Danışmanlık"
-          title="Yetişkin Bireysel Psikoterapi ve Danışmanlık"
-        />
-      </div>
+      <DetailHero
+        eyebrow="Bireysel · 02"
+        title="Yetişkin Bireysel Psikoterapi ve Danışmanlık"
+        lead="Yetişkinlik dönemi, hem geçmişin izlerini hem de bugünün sorumluluklarını aynı anda taşıdığımız karmaşık bir süreçtir. Semptomların altındaki kökleri anlayan, değiştiren bir çalışma."
+        image="/images/window-light.jpg"
+        imageAlt="Pencereden süzülen ışık"
+      />
 
-      <Prose>
+      <Article withDropCap>
         <p>
           Günlük yaşamın getirdiği iş stresi, ilişki çatışmaları veya geçmişten
-          gelen ve çözüm bekleyen derin duygusal düğümler... Yetişkinlik
-          dönemi, hem geçmişin izlerini hem de bugünün sorumluluklarını aynı
-          anda taşıdığımız karmaşık bir süreçtir. Yetişkin bireysel psikoterapi
-          sürecimde, bireylerin bu karmaşa içinde kaybolmadan, kendi
+          gelen ve çözüm bekleyen derin duygusal düğümler... Yetişkin bireysel
+          psikoterapi sürecimde, bireylerin bu karmaşa içinde kaybolmadan, kendi
           potansiyellerini keşfetmelerine ve zihinsel esneklik kazanmalarına
           yardımcı olmayı hedefliyorum.
         </p>
         <p>
           Bu süreçte sadece semptomları (kaygı, üzüntü, tükenmişlik) dindirmeyi
-          değil, <strong>bu semptomların altında yatan kökenleri anlamayı ve
-          değiştirmeyi</strong> önceliklendiriyorum. Terapi pratiğimde, bilimsel
-          kanıta dayalı yöntemler olan <strong>Bilişsel Davranışçı Terapi
-          (BDT)</strong>, <strong>Şema Terapi</strong> ve{" "}
-          <strong>Sanat Terapisi</strong> ekollerini sentezleyerek kullanıyorum.
-          BDT ile bugün yaşadığınız işlevsel olmayan düşünce kalıplarını ve
-          davranışları değiştirirken, Şema Terapi ile çocukluk ve ergenlik
-          döneminde geliştirdiğiniz, bugünkü hayatınızı sabote eden uyumsuz
-          şemaları (terk edilme, kusurluluk, duygusal yoksunluk gibi) tespit
-          ediyor ve daha sağlıklı modlarla değiştirmek üzerine derinlemesine
-          çalışıyoruz.
+          değil,{" "}
+          <strong>
+            bu semptomların altında yatan kökenleri anlamayı ve değiştirmeyi
+          </strong>{" "}
+          önceliklendiriyorum.
         </p>
-      </Prose>
+        <p>
+          Terapi pratiğimde, bilimsel kanıta dayalı yöntemler olan{" "}
+          <strong>Bilişsel Davranışçı Terapi (BDT)</strong>,{" "}
+          <strong>Şema Terapi</strong> ve <strong>Sanat Terapisi</strong>{" "}
+          ekollerini sentezleyerek kullanıyorum. BDT ile bugün yaşadığınız
+          işlevsel olmayan düşünce kalıplarını ve davranışları değiştirirken,
+          Şema Terapi ile çocukluk ve ergenlik döneminde geliştirdiğiniz,
+          bugünkü hayatınızı sabote eden uyumsuz şemaları (terk edilme,
+          kusurluluk, duygusal yoksunluk gibi) tespit ediyor ve daha sağlıklı
+          modlarla değiştirmek üzerine derinlemesine çalışıyoruz.
+        </p>
+      </Article>
 
-      <Bullets
-        heading="Özel Uzmanlık ve Çalışma Alanları"
+      <PullQuote>
+        Değişim, bir karar anı değildir — bir pratik, bir ritim, bir ilişki
+        biçimidir.
+      </PullQuote>
+
+      <ImageBreak
+        src="/images/abstract-warm.jpg"
+        alt="Sıcak soyut"
+        height="h-[55vh]"
+      />
+
+      <SpecialtyList
+        heading="Semptomun ötesine — kök nedeni anlamak."
         items={[
           {
             title: "Kaygı ve Panik Bozukluklar (Anksiyete)",
@@ -70,8 +90,7 @@ export default function Page() {
         ]}
       />
 
-      <CtaStrip />
-      <div className="h-16" />
+      <CtaBand image="/images/window-light.jpg" />
     </>
   );
 }

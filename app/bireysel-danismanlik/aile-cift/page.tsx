@@ -1,5 +1,11 @@
-import Blobs from "@/components/Blobs";
-import { Bullets, CtaStrip, PageHero, Prose } from "@/components/Section";
+import {
+  Article,
+  CtaBand,
+  DetailHero,
+  ImageBreak,
+  PullQuote,
+  SpecialtyList,
+} from "@/components/Section";
 
 export const metadata = {
   title: "Aile ve Çift Danışmanlığı",
@@ -10,43 +16,44 @@ export const metadata = {
 export default function Page() {
   return (
     <>
-      <div className="relative">
-        <Blobs />
-        <PageHero
-          eyebrow="Bireysel Danışmanlık"
-          title="Aile ve Çift Danışmanlığı"
-        />
-      </div>
+      <DetailHero
+        eyebrow="Bireysel · 03"
+        title="Aile ve Çift Danışmanlığı"
+        lead="İlişkiyi; iki kişinin bir araya gelmesi olarak değil, yaşayan ve sürekli etkileşim halinde olan bir 'sistem' olarak ele alan bir çalışma."
+        image="/images/couple-hands.jpg"
+        imageAlt="El ele çiftin yakın planı"
+      />
 
-      <Prose>
+      <Article withDropCap>
         <p>
           İlişkiler ve aile yapısı, bireyin en temel güven ve aidiyet ihtiyacını
           karşıladığı alanlardır. Ancak her ilişki, zaman zaman bireylerin kendi
           geçmişlerinden getirdiği duygusal yükler, iletişim kazaları ve yaşamın
-          getirdiği stres faktörleri nedeniyle tıkanıklıklar yaşayabilir. Aile
-          ve çift danışmanlığı sürecinde, ilişkiyi sadece iki kişinin bir araya
-          gelmesi olarak değil,{" "}
-          <strong>
-            yaşayan ve sürekli etkileşim halinde olan bir "sistem"
-          </strong>{" "}
-          olarak ele alıyorum.
+          getirdiği stres faktörleri nedeniyle tıkanıklıklar yaşayabilir.
         </p>
         <p>
           Bu süreçte, partnerlerin birbirleriyle olan etkileşimlerini{" "}
           <strong>Sistemik Yaklaşım</strong> ve{" "}
           <strong>Çiftler İçin Şema Terapi</strong> merkeze alınarak analiz
-          ediyoruz. Çiftlerin birbirlerini sadece "suçlu/haklı" ekseninde
-          değil, birbirlerinin duygusal ihtiyaçlarını ve hassas noktalarını
-          anlayan bir düzlemde görmelerini sağlıyoruz. Kendi çocukluk
-          dönemimizden getirdiğimiz ve ilişkide tetiklenen "şemalarımızın"
-          (terk edilme, kusurluluk, haklılık gibi) partnerimizle kurduğumuz
-          bağı nasıl sabote ettiğini keşfediyor; yıkıcı tartışma döngülerini
-          yapıcı, şefkatli ve işlevsel bir iletişim diliyle değiştiriyoruz.
+          ediyoruz. Çiftlerin birbirlerini sadece "suçlu/haklı" ekseninde değil,
+          birbirlerinin duygusal ihtiyaçlarını ve hassas noktalarını anlayan bir
+          düzlemde görmelerini sağlıyoruz.
         </p>
-      </Prose>
+      </Article>
 
-      <Bullets
-        heading="Özel Uzmanlık ve Çalışma Alanları"
+      <PullQuote>
+        Yıkıcı tartışma döngülerini; yapıcı, şefkatli ve işlevsel bir iletişim
+        diliyle değiştiriyoruz.
+      </PullQuote>
+
+      <ImageBreak
+        src="/images/nature-water.jpg"
+        alt="Dingin su"
+        height="h-[55vh]"
+      />
+
+      <SpecialtyList
+        heading="Birlikte — bir sistem olarak."
         items={[
           {
             title: "İlişki Dinamikleri ve İletişim Problemleri",
@@ -76,8 +83,7 @@ export default function Page() {
         ]}
       />
 
-      <CtaStrip />
-      <div className="h-16" />
+      <CtaBand image="/images/nature-water.jpg" />
     </>
   );
 }

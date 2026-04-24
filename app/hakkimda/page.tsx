@@ -1,6 +1,5 @@
 import Image from "next/image";
-import Blobs from "@/components/Blobs";
-import { CtaStrip, PageHero } from "@/components/Section";
+import { Article, CtaBand, ImageBreak, PullQuote } from "@/components/Section";
 
 export const metadata = {
   title: "Hakkımda",
@@ -11,107 +10,126 @@ export const metadata = {
 export default function HakkimdaPage() {
   return (
     <>
-      <div className="relative">
-        <Blobs />
-        <PageHero
-          eyebrow="Hakkımda"
-          title="Bilimin Işığında, İnsanın Hikâyesine Eşlik Etmek"
-        />
-      </div>
-
-      <section className="container-soft mt-4">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.3fr] items-start">
-          <div className="relative">
-            <div className="aspect-[4/5] relative rounded-[2rem] overflow-hidden shadow-soft bg-linen sticky top-28">
-              <Image
-                src="/ASENAHOCAM.png"
-                alt="Asena Türkay"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 480px"
-              />
-            </div>
+      {/* Opening editorial hero */}
+      <section className="relative">
+        <div className="container-wide pt-16 pb-8 grid gap-12 lg:grid-cols-[1fr_1.3fr] lg:items-end">
+          <div className="frame-photo aspect-[3/4] lg:aspect-[4/5] reveal">
+            <Image
+              src="/ASENAHOCAM.png"
+              alt="Asena Türkay"
+              fill
+              sizes="(max-width: 1024px) 100vw, 560px"
+              className="object-cover"
+              priority
+            />
           </div>
-
-          <div className="text-inkSoft leading-relaxed space-y-6 text-[17px]">
-            <p>
-              Merhaba, ben <strong className="text-ink">Asena Türkay</strong>.
-              İnsanın zihinsel ve ruhsal yolculuğuna eşlik etmeyi sadece bir
-              meslek değil, bilimsel bir sorumluluk ve etik bir duruş olarak
-              görüyorum. Psikolojik danışma dünyasındaki akademik birikimimi,
-              klinik tecrübemle birleştirerek; bireylerin, ailelerin ve
-              organizasyonların kendi potansiyellerini keşfetmelerine rehberlik
-              ediyorum.
-            </p>
-            <p>
-              Psikolojik danışma odasında ve kurumsal projelerimde temel
-              felsefem; teorik bilginin pratik hayatla buluştuğu noktada kalıcı
-              dönüşümün başladığıdır. Çalışmalarımda{" "}
-              <strong className="text-ink">Şema Terapi</strong>,{" "}
-              <strong className="text-ink">Bilişsel Davranışçı Terapi (BDT)</strong>{" "}
-              ve <strong className="text-ink">Sanat Terapisi</strong> ekollerini
-              merkeze alarak, bireylerin çocukluktan getirdiği uyumsuz kalıpları
-              (şemaları) fark etmelerini ve daha sağlıklı "yetişkin" modlarına
-              geçmelerini hedefliyorum. Benim için her danışan, kendine has bir
-              ekosistem ve her seans, bu ekosistemin dengesini bulma
-              yolculuğudur.
-            </p>
-
-            <div className="my-10 rounded-[2rem] bg-gradient-blush p-8">
-              <div className="eyebrow mb-3">Akademik Danışmanlık</div>
-              <p className="text-ink leading-relaxed">
-                Klinik çalışmalarımın yanı sıra, organizasyonel psikoloji ve
-                "insan odaklı tasarım" süreçlerinin bilimsel altyapısı üzerine
-                odaklanıyorum.{" "}
-                <a
-                  href="https://upcore.io"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-roseDeep underline-offset-4 hover:underline"
-                >
-                  upcore.io
-                </a>{" "}
-                platformunda akademik ve bilimsel danışman olarak;
-                organizasyonel mimariyi{" "}
-                <strong>JD-R (İş Talepleri-Kaynakları Modeli)</strong> ve{" "}
-                <strong>
-                  S-BIT (Güçlü Yönlere Dayalı Kapsayıcı Çalışma Kuramı)
-                </strong>{" "}
-                gibi kanıta dayalı modeller çerçevesinde yapılandırıyorum.
-                Amacım, iş dünyasındaki süreçlerin sadece verimlilik değil,
-                insan psikolojisinin temel ihtiyaçları gözetilerek kurgulanmasını
-                sağlamaktır.
-              </p>
+          <div className="reveal" style={{ animationDelay: "120ms" }}>
+            <div className="flex items-center gap-4 mb-8">
+              <div className="rule" />
+              <span className="eyebrow">Hakkımda</span>
             </div>
-
-            <div className="my-10 rounded-[2rem] border border-rose/40 p-8">
-              <div className="eyebrow mb-3 text-roseDeep">
-                Türk PDR Derneği — Genel Başkan Yardımcısı
-              </div>
-              <p>
-                Mesleki sorumluluklarım kapsamında, Türk PDR Derneği çatısı
-                altında Genel Başkan Yardımcılığı görevimi sürdürüyorum. Bu rol
-                ile mesleki standartların korunması, meslektaşlar arası
-                dayanışmanın güçlendirilmesi ve toplumsal fayda odaklı
-                projelerin bilimsel koordinasyonu süreçlerinde aktif rol
-                alıyorum.
-              </p>
-            </div>
-
-            <p>
-              Çalışmalarımın odağında, bilginin teoride kalmayıp hayata dokunan
-              bir çözüm aracına dönüşmesi yer alıyor. Gerek mesleğe adım atan
-              stajyerlerime sunduğum mentorluk süreçlerinde, gerekse kurumların
-              çalışan esenliği projelerinde temel hedefim; psikolojik sermayesi
-              güçlü, dayanıklı ve farkındalığı yüksek bireylerden oluşan bir
-              toplumsal yapıya akademik katkı sağlamaktır.
+            <h1 className="display-xl">
+              Bilimin <span className="italic text-rust">ışığında</span>,
+              <br />
+              insanın hikâyesine eşlik etmek.
+            </h1>
+            <p className="mt-10 font-display italic text-2xl text-inkSoft max-w-xl">
+              Doktorant Psikolojik Danışman · Şema Terapi · BDT · Sanat Terapisi
             </p>
           </div>
         </div>
       </section>
 
-      <CtaStrip />
-      <div className="h-16" />
+      <Article withDropCap>
+        <p>
+          Merhaba, ben <strong>Asena Türkay</strong>. İnsanın zihinsel ve
+          ruhsal yolculuğuna eşlik etmeyi sadece bir meslek değil, bilimsel bir
+          sorumluluk ve etik bir duruş olarak görüyorum. Psikolojik danışma
+          dünyasındaki akademik birikimimi, klinik tecrübemle birleştirerek;
+          bireylerin, ailelerin ve organizasyonların kendi potansiyellerini
+          keşfetmelerine rehberlik ediyorum.
+        </p>
+        <p>
+          Psikolojik danışma odasında ve kurumsal projelerimde temel felsefem;
+          teorik bilginin pratik hayatla buluştuğu noktada kalıcı dönüşümün
+          başladığıdır. Çalışmalarımda <strong>Şema Terapi</strong>,{" "}
+          <strong>Bilişsel Davranışçı Terapi (BDT)</strong> ve{" "}
+          <strong>Sanat Terapisi</strong> ekollerini merkeze alarak, bireylerin
+          çocukluktan getirdiği uyumsuz kalıpları (şemaları) fark etmelerini ve
+          daha sağlıklı "yetişkin" modlarına geçmelerini hedefliyorum.
+        </p>
+      </Article>
+
+      <PullQuote>
+        Benim için her danışan, kendine has bir ekosistem ve her seans, bu
+        ekosistemin dengesini bulma yolculuğudur.
+      </PullQuote>
+
+      <ImageBreak
+        src="/images/linen-texture.jpg"
+        alt="Doku"
+        caption="Sessizliğin, dinlenmenin ve dönüşmenin önem kazandığı bir pratik."
+        height="h-[70vh]"
+      />
+
+      <Article>
+        <p>
+          Klinik çalışmalarımın yanı sıra, organizasyonel psikoloji ve "insan
+          odaklı tasarım" süreçlerinin bilimsel altyapısı üzerine odaklanıyorum.{" "}
+          <a
+            href="https://upcore.io"
+            target="_blank"
+            rel="noreferrer"
+            className="text-rust border-b border-rust hover:text-ink hover:border-ink transition-colors"
+          >
+            upcore.io
+          </a>{" "}
+          platformunda akademik ve bilimsel danışman olarak; organizasyonel
+          mimariyi <strong>JD-R (İş Talepleri-Kaynakları Modeli)</strong> ve{" "}
+          <strong>S-BIT (Güçlü Yönlere Dayalı Kapsayıcı Çalışma Kuramı)</strong>{" "}
+          gibi kanıta dayalı modeller çerçevesinde yapılandırıyorum. Amacım, iş
+          dünyasındaki süreçlerin sadece verimlilik değil, insan psikolojisinin
+          temel ihtiyaçları gözetilerek kurgulanmasını sağlamaktır.
+        </p>
+      </Article>
+
+      {/* Credentials block */}
+      <section className="container-wide my-24">
+        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 items-start">
+          <div>
+            <div className="eyebrow mb-4">Mesleki Sorumluluklar</div>
+            <h2 className="display-md max-w-md">
+              Türk PDR Derneği <span className="italic text-rust">Genel Başkan Yardımcısı</span>
+            </h2>
+          </div>
+          <p className="text-[17px] leading-[1.75] text-inkSoft max-w-xl">
+            Mesleki sorumluluklarım kapsamında, Türk PDR Derneği çatısı altında
+            Genel Başkan Yardımcılığı görevimi sürdürüyorum. Bu rol ile mesleki
+            standartların korunması, meslektaşlar arası dayanışmanın
+            güçlendirilmesi ve toplumsal fayda odaklı projelerin bilimsel
+            koordinasyonu süreçlerinde aktif rol alıyorum.
+          </p>
+        </div>
+      </section>
+
+      <Article>
+        <p>
+          Çalışmalarımın odağında, bilginin teoride kalmayıp hayata dokunan bir
+          çözüm aracına dönüşmesi yer alıyor. Gerek mesleğe adım atan
+          stajyerlerime sunduğum mentorluk süreçlerinde, gerekse kurumların
+          çalışan esenliği projelerinde temel hedefim;{" "}
+          <strong>
+            psikolojik sermayesi güçlü, dayanıklı ve farkındalığı yüksek
+            bireylerden oluşan bir toplumsal yapıya
+          </strong>{" "}
+          akademik katkı sağlamaktır.
+        </p>
+      </Article>
+
+      <CtaBand
+        title="Tanışmak ister misiniz?"
+        body="Danışmanlık, kurumsal iş birliği ya da atölye talepleriniz için size özel bir süreç tasarlayalım."
+      />
     </>
   );
 }

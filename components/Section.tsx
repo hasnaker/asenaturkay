@@ -1,40 +1,107 @@
+import Image from "next/image";
+import Link from "next/link";
 import { ReactNode } from "react";
 
-export function PageHero({
+/* ===== Page hero for detail pages ===== */
+export function DetailHero({
   eyebrow,
   title,
   lead,
+  image,
+  imageAlt,
 }: {
-  eyebrow?: string;
+  eyebrow: string;
   title: string;
   lead?: string;
+  image: string;
+  imageAlt: string;
 }) {
   return (
-    <section className="relative pt-20 pb-14">
-      <div className="container-soft text-center fade-up">
-        {eyebrow && <div className="eyebrow mb-4">{eyebrow}</div>}
-        <h1 className="title-serif text-5xl sm:text-6xl leading-[1.05] tracking-tight">
-          {title}
-        </h1>
-        {lead && (
-          <p className="mt-6 mx-auto max-w-2xl text-inkSoft leading-relaxed">
-            {lead}
-          </p>
-        )}
+    <section className="relative">
+      <div className="container-wide pt-16 pb-8 grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-end">
+        <div className="reveal max-w-2xl">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="rule" />
+            <span className="eyebrow">{eyebrow}</span>
+          </div>
+          <h1 className="display-lg">{title}</h1>
+          {lead && (
+            <p className="mt-8 text-[19px] leading-[1.7] text-inkSoft max-w-xl">
+              {lead}
+            </p>
+          )}
+        </div>
+        <div className="frame-photo aspect-[4/5] lg:aspect-[3/4] reveal" style={{ animationDelay: "120ms" }}>
+          <Image
+            src={image}
+            alt={imageAlt}
+            fill
+            sizes="(max-width: 1024px) 100vw, 600px"
+            className="object-cover"
+            priority
+          />
+        </div>
       </div>
     </section>
   );
 }
 
-export function Prose({ children }: { children: ReactNode }) {
+/* ===== Editorial article body ===== */
+export function Article({
+  children,
+  withDropCap = false,
+}: {
+  children: ReactNode;
+  withDropCap?: boolean;
+}) {
   return (
-    <div className="container-prose text-inkSoft leading-relaxed space-y-6 [&_h2]:title-serif [&_h2]:text-3xl [&_h2]:mt-12 [&_h2]:mb-2 [&_h3]:title-serif [&_h3]:text-xl [&_h3]:mt-8 [&_h3]:mb-2 [&_strong]:text-ink [&_p]:text-[17px] [&_li]:text-[17px]">
-      {children}
-    </div>
+    <section className="container-prose mt-10 lg:mt-16">
+      <article className={`prose-article ${withDropCap ? "drop-cap" : ""}`}>
+        {children}
+      </article>
+    </section>
   );
 }
 
-export function Bullets({
+/* ===== Pull quote (big italic) ===== */
+export function PullQuote({ children }: { children: ReactNode }) {
+  return (
+    <section className="container-prose my-16">
+      <figure className="border-l-2 border-rust pl-8">
+        <blockquote className="pull-quote">"{children}"</blockquote>
+      </figure>
+    </section>
+  );
+}
+
+/* ===== Full-bleed image break ===== */
+export function ImageBreak({
+  src,
+  alt,
+  caption,
+  height = "h-[60vh]",
+}: {
+  src: string;
+  alt: string;
+  caption?: string;
+  height?: string;
+}) {
+  return (
+    <section className="my-20">
+      <div className={`relative ${height} overflow-hidden`}>
+        <Image src={src} alt={alt} fill sizes="100vw" className="object-cover" />
+      </div>
+      {caption && (
+        <p className="container-wide pt-4 font-display italic text-muted text-[15px]">
+          {caption}
+        </p>
+      )}
+    </section>
+  );
+}
+
+/* ===== Numbered specialty list ===== */
+export function SpecialtyList({
   heading,
   items,
 }: {
@@ -42,41 +109,77 @@ export function Bullets({
   items: { title: string; body: string }[];
 }) {
   return (
-    <section className="container-prose mt-12">
+    <section className="container-soft mt-24">
       {heading && (
-        <h3 className="title-serif text-2xl mb-6 text-ink">{heading}</h3>
+        <div className="max-w-2xl mx-auto text-center mb-16">
+          <div className="eyebrow mb-4">Özel Uzmanlık Alanları</div>
+          <h2 className="display-md">{heading}</h2>
+        </div>
       )}
-      <ul className="space-y-5">
+      <div className="max-w-4xl mx-auto">
         {items.map((it, i) => (
-          <li
+          <div
             key={i}
-            className="pl-6 border-l-2 border-rose/60 text-inkSoft leading-relaxed"
+            className="grid grid-cols-[auto_1fr] gap-8 py-10 border-b border-ink/10 last:border-0"
           >
-            <span className="font-sans font-medium text-ink">{it.title}</span>
-            {": "}
-            <span className="text-[17px]">{it.body}</span>
-          </li>
+            <span className="label-number">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <div>
+              <h3 className="font-display text-2xl sm:text-3xl font-light text-ink mb-3">
+                {it.title}
+              </h3>
+              <p className="text-[17px] leading-[1.7] text-inkSoft">{it.body}</p>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </section>
   );
 }
 
-export function CtaStrip() {
+/* ===== CTA band ===== */
+export function CtaBand({
+  title = "Yolculuğunuza bugün başlayın.",
+  body = "Birlikte keşfetmeye ve kalıcı bir dönüşümün eşiğinde durmaya hazır mısınız?",
+  image = "/images/light-sunset.jpg",
+}: {
+  title?: string;
+  body?: string;
+  image?: string;
+}) {
   return (
-    <section className="container-soft mt-24">
-      <div className="rounded-[2.5rem] bg-gradient-blush p-10 sm:p-14 text-center shadow-soft">
-        <div className="eyebrow mb-3">Yolculuğunuza Bugün Başlayın</div>
-        <h2 className="title-serif text-3xl sm:text-4xl">
-          Birlikte keşfetmeye hazır mısınız?
-        </h2>
-        <p className="mt-4 max-w-xl mx-auto text-inkSoft">
-          Bireysel, aile ya da kurumsal destek için ilk adımı atın. Size en
-          uygun süreci birlikte tasarlayalım.
-        </p>
-        <div className="mt-8 flex items-center justify-center gap-3 flex-wrap">
-          <a href="/iletisim" className="btn-primary">Randevu Al</a>
-          <a href="/bireysel-danismanlik" className="btn-ghost">Hizmetleri Keşfet</a>
+    <section className="relative mt-32">
+      <div className="relative h-[80vh] min-h-[560px] overflow-hidden">
+        <Image src={image} alt="" fill sizes="100vw" className="object-cover" />
+        <div className="absolute inset-0 bg-ink/50" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="container-soft text-center text-cream max-w-2xl">
+            <div className="eyebrow !text-cream/70 mb-5">Randevu</div>
+            <h2 className="font-display font-light text-5xl sm:text-6xl lg:text-7xl leading-[1.02]">
+              {title.split(" ").slice(0, -2).join(" ")}{" "}
+              <span className="italic text-clay">
+                {title.split(" ").slice(-2).join(" ")}
+              </span>
+            </h2>
+            <p className="mt-8 max-w-lg mx-auto text-cream/80 leading-relaxed text-[17px]">
+              {body}
+            </p>
+            <div className="mt-10 flex flex-wrap justify-center gap-3">
+              <Link
+                href="/iletisim"
+                className="btn-primary !bg-cream !text-ink hover:!bg-clay"
+              >
+                Randevu Al
+              </Link>
+              <Link
+                href="/bireysel-danismanlik"
+                className="btn-ghost !text-cream !border-cream/40 hover:!bg-cream hover:!text-ink"
+              >
+                Hizmetleri Keşfet
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>

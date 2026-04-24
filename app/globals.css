@@ -2,56 +2,104 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --font-cormorant: "Cormorant Garamond", Georgia, serif;
-  --font-inter: "Inter", system-ui, sans-serif;
-}
-
 html, body {
-  background: #FDF8F3;
-  color: #3A3937;
+  background: #FAF5EE;
+  color: #2B2724;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-::selection { background: #E8D5C4; color: #3A3937; }
+::selection { background: #C9A68A; color: #2B2724; }
+
+/* Subtle film grain across the whole site */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.168 0 0 0 0 0.152 0 0 0 0 0.141 0 0 0 0.05 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+body > * { position: relative; z-index: 2; }
 
 @layer components {
-  .container-soft { @apply mx-auto w-full max-w-6xl px-6; }
-  .container-prose { @apply mx-auto w-full max-w-3xl px-6; }
+  .container-soft { @apply mx-auto w-full max-w-[1280px] px-6 sm:px-10; }
+  .container-wide { @apply mx-auto w-full max-w-[1440px] px-6 sm:px-10; }
+  .container-prose { @apply mx-auto w-full max-w-[720px] px-6; }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-roseDeep px-6 py-3 font-sans text-sm font-medium text-cream transition-all hover:bg-rose hover:shadow-glow;
+    @apply inline-flex items-center justify-center gap-2 rounded-none bg-ink px-8 py-4 font-sans text-[13px] font-medium uppercase tracking-[0.2em] text-cream transition-all hover:bg-rust;
   }
   .btn-ghost {
-    @apply inline-flex items-center justify-center rounded-full border border-blush px-6 py-3 font-sans text-sm font-medium text-ink transition-all hover:bg-linen;
+    @apply inline-flex items-center justify-center gap-2 rounded-none border border-ink/20 px-8 py-4 font-sans text-[13px] font-medium uppercase tracking-[0.2em] text-ink transition-all hover:border-ink hover:bg-ink hover:text-cream;
   }
-
-  .card-soft {
-    @apply rounded-3xl bg-white/70 backdrop-blur-sm p-8 shadow-soft transition-all hover:shadow-glow;
-  }
-
-  .title-serif {
-    @apply font-serif font-light tracking-tight text-ink;
+  .btn-link {
+    @apply inline-flex items-center gap-2 font-sans text-[13px] uppercase tracking-[0.2em] text-ink border-b border-ink pb-1 hover:text-rust hover:border-rust transition-colors;
   }
 
   .eyebrow {
-    @apply text-xs font-sans uppercase tracking-[0.25em] text-muted;
+    @apply text-[11px] font-sans uppercase tracking-[0.28em] text-muted;
   }
+  .eyebrow-dark { @apply text-[11px] font-sans uppercase tracking-[0.28em] text-ink/70; }
+
+  .display-xl { @apply font-display font-light text-display-xl text-ink; }
+  .display-lg { @apply font-display font-light text-display-lg text-ink; }
+  .display-md { @apply font-display font-light text-display-md text-ink; }
+
+  .rule { @apply h-px w-12 bg-ink/30; }
+  .rule-long { @apply h-px w-full bg-ink/10; }
+
+  .prose-article > p {
+    @apply text-[18px] leading-[1.75] text-inkSoft;
+  }
+  .prose-article > p + p { @apply mt-6; }
+  .prose-article strong { @apply text-ink font-medium; }
+
+  .drop-cap > p:first-of-type::first-letter {
+    @apply font-display font-normal text-rust;
+    font-size: 5.5rem;
+    line-height: 0.9;
+    float: left;
+    margin: 0.1em 0.15em 0 0;
+  }
+
+  .pull-quote {
+    @apply font-display font-light text-ink italic;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    line-height: 1.25;
+  }
+
+  .frame-photo {
+    @apply relative overflow-hidden bg-bone shadow-frame;
+  }
+  .frame-photo img { @apply h-full w-full object-cover transition-transform duration-700; }
+  .frame-photo:hover img { @apply scale-[1.03]; }
+
+  .label-number {
+    @apply font-display font-light text-ink/40 tabular-nums;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1;
+  }
+
+  .hover-underline {
+    @apply relative;
+  }
+  .hover-underline::after {
+    content: "";
+    @apply absolute left-0 -bottom-1 h-px w-0 bg-current transition-all duration-300;
+  }
+  .hover-underline:hover::after { @apply w-full; }
 }
 
-/* Gentle fade-in for page transitions */
+/* Reveal on scroll (CSS-only using animation) */
+.reveal {
+  animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(8px); }
+  from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
-}
-.fade-up { animation: fadeUp 0.6s ease-out both; }
-
-/* Subtle gradient blobs used on pages as backdrop */
-.blob {
-  position: absolute;
-  pointer-events: none;
-  filter: blur(80px);
-  opacity: 0.55;
-  border-radius: 9999px;
 }

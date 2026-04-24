@@ -1,92 +1,112 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const links = [
-  { href: "/", label: "Anasayfa" },
   { href: "/hakkimda", label: "Hakkımda" },
-  { href: "/bireysel-danismanlik", label: "Bireysel Danışmanlık" },
+  { href: "/bireysel-danismanlik", label: "Bireysel" },
   { href: "/kurumsal", label: "Kurumsal" },
   { href: "/egitimler", label: "Eğitimler" },
   { href: "/blog", label: "Blog" },
-  { href: "/iletisim", label: "İletişim" },
 ];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-blush/40 bg-cream/85 backdrop-blur-md">
-      <div className="container-soft flex h-20 items-center justify-between">
-        <Link
-          href="/"
-          className="font-serif text-xl tracking-wide text-ink hover:text-roseDeep transition-colors"
-        >
-          Asena <span className="text-roseDeep">Türkay</span>
+    <header
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-cream/95 backdrop-blur border-b border-ink/8"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="container-wide flex h-20 items-center justify-between">
+        <Link href="/" className="group flex items-baseline gap-2">
+          <span className="font-display text-[22px] tracking-tight text-ink">
+            Asena Türkay
+          </span>
+          <span className="hidden sm:inline eyebrow !tracking-[0.3em] group-hover:text-rust transition-colors">
+            · Dr. Psk. Dan.
+          </span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-7">
+        <nav className="hidden lg:flex items-center gap-10">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="font-sans text-sm text-inkSoft hover:text-roseDeep transition-colors"
+              className="hover-underline font-sans text-[13px] uppercase tracking-[0.2em] text-ink/80 hover:text-ink transition-colors"
             >
               {l.label}
             </Link>
           ))}
-          <Link href="/iletisim" className="btn-primary !py-2 !px-5 !text-xs">
+          <Link href="/iletisim" className="btn-primary !px-6 !py-3">
             Randevu Al
           </Link>
         </nav>
 
         <button
           onClick={() => setOpen(!open)}
-          className="lg:hidden flex flex-col gap-1.5 p-2"
+          className="lg:hidden flex flex-col gap-[5px] p-2"
           aria-label="Menü"
+          aria-expanded={open}
         >
           <span
-            className={`block h-px w-6 bg-ink transition-transform ${
+            className={`block h-px w-7 bg-ink transition-transform duration-300 ${
               open ? "translate-y-[6px] rotate-45" : ""
             }`}
           />
           <span
-            className={`block h-px w-6 bg-ink transition-opacity ${
+            className={`block h-px w-7 bg-ink transition-opacity duration-300 ${
               open ? "opacity-0" : ""
             }`}
           />
           <span
-            className={`block h-px w-6 bg-ink transition-transform ${
+            className={`block h-px w-7 bg-ink transition-transform duration-300 ${
               open ? "-translate-y-[6px] -rotate-45" : ""
             }`}
           />
         </button>
       </div>
 
-      {open && (
-        <div className="lg:hidden border-t border-blush/40 bg-cream">
-          <nav className="container-soft flex flex-col py-6 gap-4">
-            {links.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="font-sans text-base text-inkSoft hover:text-roseDeep"
-              >
-                {l.label}
-              </Link>
-            ))}
+      {/* Mobile drawer */}
+      <div
+        className={`lg:hidden fixed inset-x-0 top-20 bottom-0 bg-cream border-t border-ink/10 transition-transform duration-400 ease-out ${
+          open ? "translate-y-0" : "-translate-y-[120%]"
+        }`}
+      >
+        <nav className="container-soft flex flex-col py-10 gap-6">
+          {links.map((l, i) => (
             <Link
-              href="/iletisim"
+              key={l.href}
+              href={l.href}
               onClick={() => setOpen(false)}
-              className="btn-primary w-full mt-2"
+              className="font-display text-4xl text-ink hover:text-rust transition-colors"
+              style={{ animationDelay: `${i * 80}ms` }}
             >
-              Randevu Al
+              {l.label}
             </Link>
-          </nav>
-        </div>
-      )}
+          ))}
+          <div className="rule-long my-4" />
+          <Link
+            href="/iletisim"
+            onClick={() => setOpen(false)}
+            className="btn-primary self-start"
+          >
+            Randevu Al
+          </Link>
+        </nav>
+      </div>
     </header>
   );
 }

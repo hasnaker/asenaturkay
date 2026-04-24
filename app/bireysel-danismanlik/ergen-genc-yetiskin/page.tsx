@@ -1,5 +1,11 @@
-import Blobs from "@/components/Blobs";
-import { Bullets, CtaStrip, PageHero, Prose } from "@/components/Section";
+import {
+  Article,
+  CtaBand,
+  DetailHero,
+  ImageBreak,
+  PullQuote,
+  SpecialtyList,
+} from "@/components/Section";
 
 export const metadata = {
   title: "Ergen ve Genç Yetişkin Danışmanlığı",
@@ -10,15 +16,15 @@ export const metadata = {
 export default function Page() {
   return (
     <>
-      <div className="relative">
-        <Blobs />
-        <PageHero
-          eyebrow="Bireysel Danışmanlık"
-          title="Ergen ve Genç Yetişkin Danışmanlığı"
-        />
-      </div>
+      <DetailHero
+        eyebrow="Bireysel · 01"
+        title="Ergen ve Genç Yetişkin Danışmanlığı"
+        lead='Gelişimin en kırılgan ve en güçlü döneminde; "Kimlik vs. Rol Karmaşası" aşamasında olan gençlere, fırtınalı denizde profesyonel bir pusula.'
+        image="/images/young-adult.jpg"
+        imageAlt="Genç bireyin düşünceli portresi"
+      />
 
-      <Prose>
+      <Article withDropCap>
         <p>
           Ergenlik, çocukluktan yetişkinliğe geçişin çok ötesinde; kimlik
           inşasının, biyolojik ve nörolojik değişimin (frontal lob olgunlaşması)
@@ -34,18 +40,24 @@ export default function Page() {
           Terapi sürecinde gençlerin dünyasına yargılamadan, empatiyle ve
           profesyonel sınırlar içinde yaklaşıyorum. Onların kendilerini ifade
           edebilecekleri, mahremiyete önem verilen güvenli bir alan
-          oluşturuyoruz. Ergen danışmanlığında temel amacım, gencin sadece
-          "sorun çözmesine" değil,{" "}
-          <strong>
-            özsaygısını güçlendirmesine, duygusal regülasyon becerileri
-            kazanmasına ve geleceğe dair sağlıklı hedefler kurmasına
-          </strong>{" "}
-          destek olmaktır.
+          oluşturuyoruz.
         </p>
-      </Prose>
+      </Article>
 
-      <Bullets
-        heading="Özel Uzmanlık ve Çalışma Alanları"
+      <PullQuote>
+        Amacım; gencin sadece "sorun çözmesine" değil, özsaygısını
+        güçlendirmesine, duygusal regülasyon becerileri kazanmasına ve geleceğe
+        dair sağlıklı hedefler kurmasına destek olmaktır.
+      </PullQuote>
+
+      <ImageBreak
+        src="/images/field-soft.jpg"
+        alt="Soft kır manzarası"
+        height="h-[50vh]"
+      />
+
+      <SpecialtyList
+        heading="Ergenlik, kısa bir fırtına. Alınan ders, bir ömür."
         items={[
           {
             title: "Sınav Kaygısı ve Akademik Performans Yönetimi",
@@ -70,8 +82,7 @@ export default function Page() {
         ]}
       />
 
-      <CtaStrip />
-      <div className="h-16" />
+      <CtaBand image="/images/field-soft.jpg" />
     </>
   );
 }

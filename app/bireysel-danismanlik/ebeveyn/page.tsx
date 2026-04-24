@@ -1,5 +1,11 @@
-import Blobs from "@/components/Blobs";
-import { Bullets, CtaStrip, PageHero, Prose } from "@/components/Section";
+import {
+  Article,
+  CtaBand,
+  DetailHero,
+  ImageBreak,
+  PullQuote,
+  SpecialtyList,
+} from "@/components/Section";
 
 export const metadata = {
   title: "Ebeveyn Danışmanlığı",
@@ -10,21 +16,20 @@ export const metadata = {
 export default function Page() {
   return (
     <>
-      <div className="relative">
-        <Blobs />
-        <PageHero eyebrow="Bireysel Danışmanlık" title="Ebeveyn Danışmanlığı" />
-      </div>
+      <DetailHero
+        eyebrow="Bireysel · 04"
+        title="Ebeveyn Danışmanlığı"
+        lead="Sadece 'davranış değiştirme teknikleri' değil; ebeveynin kendi çocukluğundan getirdiği kalıpları fark etmesi ve dönüştürmesi üzerine kurulu bir süreç."
+        image="/images/parent-child.jpg"
+        imageAlt="Ebeveyn-çocuk anı"
+      />
 
-      <Prose>
+      <Article withDropCap>
         <p>
           Ebeveynlik, modern çağın en büyük sorumluluklarından biri olduğu
           kadar, en karmaşık öğrenme süreçlerinden de biridir. Çoğu zaman kendi
           çocukluğumuzdan getirdiğimiz yaralar, şemalar ve toplumsal
-          beklentiler, çocuklarımızla olan bağımızı gölgeleyebilir. Ebeveyn
-          danışmanlığı sürecimde, ebeveynlere sadece "davranış değiştirme
-          teknikleri" sunmuyor; onların çocuklarının dünyasını, gelişim
-          aşamalarını ve kendi ebeveynlik tarzlarını daha derinlemesine
-          anlamalarına rehberlik ediyorum.
+          beklentiler, çocuklarımızla olan bağımızı gölgeleyebilir.
         </p>
         <p>
           Bu süreçte temel felsefem,{" "}
@@ -33,17 +38,24 @@ export default function Page() {
           şemalarının (terk edilme, aşırı denetleme, cezalandırma gibi) çocukla
           kurduğu ilişkiyi nasıl etkilediğini analiz ediyor ve bu kalıpları
           sağlıklı sınırlar, duygusal bağ ve olumlu disiplin yöntemleriyle
-          değiştiriyoruz. Amacımız, sadece itaat eden bir çocuk değil;{" "}
-          <strong>
-            duygusal zekâsı yüksek, özgüvenli ve sağlıklı sınırlar koyabilen
-            bir birey yetiştirmenize
-          </strong>{" "}
-          destek olmaktır.
+          değiştiriyoruz.
         </p>
-      </Prose>
+      </Article>
 
-      <Bullets
-        heading="Özel Uzmanlık ve Çalışma Alanları"
+      <PullQuote>
+        Amacımız, sadece itaat eden bir çocuk değil; duygusal zekâsı yüksek,
+        özgüvenli ve sağlıklı sınırlar koyabilen bir birey yetiştirmenize destek
+        olmaktır.
+      </PullQuote>
+
+      <ImageBreak
+        src="/images/corner-chair.jpg"
+        alt="Sessiz bir köşe"
+        height="h-[55vh]"
+      />
+
+      <SpecialtyList
+        heading="Ebeveynlik, en derin öğrenme."
         items={[
           {
             title: "Çocuk ve Ergen ile Sağlıklı Bağ Kurma",
@@ -68,8 +80,7 @@ export default function Page() {
         ]}
       />
 
-      <CtaStrip />
-      <div className="h-16" />
+      <CtaBand image="/images/parent-child.jpg" />
     </>
   );
 }

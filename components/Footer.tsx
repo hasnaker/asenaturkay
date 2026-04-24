@@ -2,56 +2,66 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="mt-24 border-t border-blush/40 bg-gradient-blush">
-      <div className="container-soft py-16 grid gap-10 md:grid-cols-3">
+    <footer className="relative mt-32 bg-ink text-cream">
+      <div
+        aria-hidden
+        className="absolute inset-0 opacity-[0.12] bg-cover bg-center"
+        style={{ backgroundImage: "url(/images/dried-flowers.jpg)" }}
+      />
+      <div className="relative container-wide py-20 grid gap-16 lg:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <div className="font-serif text-2xl text-ink">
-            Asena <span className="text-roseDeep">Türkay</span>
-          </div>
-          <p className="mt-3 text-sm text-inkSoft max-w-xs leading-relaxed">
-            Doktorant Psikolojik Danışman. Bilimin ışığında, bireyin hikayesine
+          <div className="eyebrow !text-cream/50 mb-5">Asena Türkay</div>
+          <h3 className="font-display font-light text-4xl sm:text-5xl leading-[1.05] max-w-md">
+            Bilimin ışığında,
+            <br />
+            <span className="italic text-clay">insanın hikâyesine</span>
+            <br />
             eşlik etmek.
-          </p>
+          </h3>
+          <div className="mt-8">
+            <Link href="/iletisim" className="btn-primary !bg-cream !text-ink hover:!bg-clay hover:!text-ink">
+              Randevu Al →
+            </Link>
+          </div>
         </div>
 
         <div>
-          <div className="eyebrow mb-4">Hızlı Erişim</div>
-          <ul className="space-y-2 text-sm text-inkSoft">
-            <li><Link href="/hakkimda" className="hover:text-roseDeep">Hakkımda</Link></li>
-            <li><Link href="/bireysel-danismanlik" className="hover:text-roseDeep">Bireysel Danışmanlık</Link></li>
-            <li><Link href="/kurumsal" className="hover:text-roseDeep">Kurumsal</Link></li>
-            <li><Link href="/egitimler" className="hover:text-roseDeep">Eğitimler & Atölyeler</Link></li>
-            <li><Link href="/blog" className="hover:text-roseDeep">Blog</Link></li>
+          <div className="eyebrow !text-cream/50 mb-5">Keşfet</div>
+          <ul className="space-y-3 text-cream/80 font-sans text-[15px]">
+            <li><Link href="/hakkimda" className="hover-underline hover:text-cream">Hakkımda</Link></li>
+            <li><Link href="/bireysel-danismanlik" className="hover-underline hover:text-cream">Bireysel Danışmanlık</Link></li>
+            <li><Link href="/kurumsal" className="hover-underline hover:text-cream">Kurumsal</Link></li>
+            <li><Link href="/egitimler" className="hover-underline hover:text-cream">Eğitimler & Atölyeler</Link></li>
+            <li><Link href="/blog" className="hover-underline hover:text-cream">Blog</Link></li>
           </ul>
         </div>
 
         <div>
-          <div className="eyebrow mb-4">İletişim</div>
-          <ul className="space-y-2 text-sm text-inkSoft">
+          <div className="eyebrow !text-cream/50 mb-5">Bağlantılar</div>
+          <ul className="space-y-3 text-cream/80 font-sans text-[15px]">
             <li>
-              <Link href="/iletisim" className="hover:text-roseDeep">
-                Randevu Al
-              </Link>
-            </li>
-            <li>
-              <a
-                href="https://upcore.io"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-roseDeep"
-              >
-                upcore.io (Kurumsal Platform)
+              <a href="https://upcore.io" target="_blank" rel="noreferrer" className="hover-underline hover:text-cream">
+                upcore.io ↗
               </a>
             </li>
+            <li>
+              <Link href="/iletisim" className="hover-underline hover:text-cream">
+                İletişim
+              </Link>
+            </li>
           </ul>
+          <div className="mt-8 eyebrow !text-cream/50">Türk PDR Derneği</div>
+          <div className="mt-1 font-display italic text-xl text-clay">
+            Genel Başkan Yardımcısı
+          </div>
         </div>
       </div>
 
-      <div className="border-t border-blush/40">
-        <div className="container-soft py-6 text-xs text-muted flex flex-col md:flex-row items-center justify-between gap-2">
-          <span>© {new Date().getFullYear()} Asena Türkay. Tüm hakları saklıdır.</span>
-          <span className="font-serif italic">
-            Bilimin ışığında, insanın hikayesine.
+      <div className="relative border-t border-cream/10">
+        <div className="container-wide py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[12px] text-cream/50 font-sans uppercase tracking-[0.2em]">
+          <span>© {new Date().getFullYear()} Asena Türkay</span>
+          <span className="font-display italic normal-case tracking-normal text-[14px] text-clay">
+            "Her danışan, kendine has bir ekosistem."
           </span>
         </div>
       </div>
