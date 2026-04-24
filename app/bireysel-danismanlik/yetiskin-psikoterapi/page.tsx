@@ -20,7 +20,7 @@ export default function Page() {
         eyebrow="Bireysel · 02"
         title="Yetişkin Bireysel Psikoterapi ve Danışmanlık"
         lead="Yetişkinlik dönemi, hem geçmişin izlerini hem de bugünün sorumluluklarını aynı anda taşıdığımız karmaşık bir süreçtir. Semptomların altındaki kökleri anlayan, değiştiren bir çalışma."
-        image="/images/window-light.jpg"
+        image="/images/yetiskin.jpg"
         imageAlt="Pencereden süzülen ışık"
       />
 
@@ -59,7 +59,7 @@ export default function Page() {
       </PullQuote>
 
       <ImageBreak
-        src="/images/abstract-warm.jpg"
+        src="/images/wellness.jpg"
         alt="Sıcak soyut"
         height="h-[55vh]"
       />
@@ -90,7 +90,7 @@ export default function Page() {
         ]}
       />
 
-      <CtaBand image="/images/window-light.jpg" />
+      <CtaBand image="/images/yetiskin.jpg" />
     </>
   );
 }

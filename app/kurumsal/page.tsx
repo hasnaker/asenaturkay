@@ -20,7 +20,7 @@ export default function Page() {
         eyebrow="Kurumsal · Upcore"
         title="Kurumsal Psikolojik Danışmanlık ve Organizasyonel Esenlik"
         lead="Organizasyonun en büyük sermayesi olan 'insan' kaynağının psikolojik iyi oluşu üzerine kurulu, bilimsel temelli sistemler."
-        image="/images/kurumsal-warm.jpg"
+        image="/images/kurumsal.jpg"
         imageAlt="Çalışma alanı"
       />
 
@@ -84,7 +84,7 @@ export default function Page() {
           <div
             aria-hidden
             className="absolute inset-0 opacity-30 bg-cover bg-center"
-            style={{ backgroundImage: "url(/images/kurumsal-warm.jpg)" }}
+            style={{ backgroundImage: "url(/images/kurumsal.jpg)" }}
           />
           <div className="relative grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-end p-10 sm:p-16 lg:p-24">
             <div>

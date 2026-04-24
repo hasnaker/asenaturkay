@@ -142,7 +142,7 @@ export function SpecialtyList({
 export function CtaBand({
   title = "Yolculuğunuza bugün başlayın.",
   body = "Birlikte keşfetmeye ve kalıcı bir dönüşümün eşiğinde durmaya hazır mısınız?",
-  image = "/images/light-sunset.jpg",
+  image = "/images/sunset.jpg",
 }: {
   title?: string;
   body?: string;

@@ -66,7 +66,7 @@ export default function HakkimdaPage() {
       </PullQuote>
 
       <ImageBreak
-        src="/images/linen-texture.jpg"
+        src="/images/cift.jpg"
         alt="Doku"
         caption="Sessizliğin, dinlenmenin ve dönüşmenin önem kazandığı bir pratik."
         height="h-[70vh]"

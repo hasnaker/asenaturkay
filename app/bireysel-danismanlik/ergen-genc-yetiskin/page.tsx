@@ -20,7 +20,7 @@ export default function Page() {
         eyebrow="Bireysel · 01"
         title="Ergen ve Genç Yetişkin Danışmanlığı"
         lead='Gelişimin en kırılgan ve en güçlü döneminde; "Kimlik vs. Rol Karmaşası" aşamasında olan gençlere, fırtınalı denizde profesyonel bir pusula.'
-        image="/images/young-adult.jpg"
+        image="/images/sunset.jpg"
         imageAlt="Genç bireyin düşünceli portresi"
       />
 
@@ -51,7 +51,7 @@ export default function Page() {
       </PullQuote>
 
       <ImageBreak
-        src="/images/field-soft.jpg"
+        src="/images/nature.jpg"
         alt="Soft kır manzarası"
         height="h-[50vh]"
       />
@@ -82,7 +82,7 @@ export default function Page() {
         ]}
       />
 
-      <CtaBand image="/images/field-soft.jpg" />
+      <CtaBand image="/images/nature.jpg" />
     </>
   );
 }

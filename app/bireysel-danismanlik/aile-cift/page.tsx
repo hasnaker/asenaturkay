@@ -20,7 +20,7 @@ export default function Page() {
         eyebrow="Bireysel · 03"
         title="Aile ve Çift Danışmanlığı"
         lead="İlişkiyi; iki kişinin bir araya gelmesi olarak değil, yaşayan ve sürekli etkileşim halinde olan bir 'sistem' olarak ele alan bir çalışma."
-        image="/images/couple-hands.jpg"
+        image="/images/cift.jpg"
         imageAlt="El ele çiftin yakın planı"
       />
 
@@ -47,7 +47,7 @@ export default function Page() {
       </PullQuote>
 
       <ImageBreak
-        src="/images/nature-water.jpg"
+        src="/images/nature.jpg"
         alt="Dingin su"
         height="h-[55vh]"
       />
@@ -83,7 +83,7 @@ export default function Page() {
         ]}
       />
 
-      <CtaBand image="/images/nature-water.jpg" />
+      <CtaBand image="/images/aile-group.jpg" />
     </>
   );
 }

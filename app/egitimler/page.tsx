@@ -81,7 +81,7 @@ export default function Page() {
         eyebrow="Eğitimler · Atölyeler"
         title="Eğitim ve Gelişim Atölyeleri"
         lead="Bilginin zihinsel bir yükten kurtulup; klinikte etkili bir müdahaleye, iş hayatında ise sürdürülebilir bir verimliliğe dönüşmesini sağlamak."
-        image="/images/workspace-warm.jpg"
+        image="/images/tea-book.jpg"
         imageAlt="Atölye çalışma alanı"
       />
 
@@ -133,7 +133,7 @@ export default function Page() {
       {/* Mentorluk — full width editorial block */}
       <section className="container-wide mt-32">
         <div className="relative overflow-hidden bg-ink text-cream min-h-[60vh] flex">
-          <div className="absolute inset-0 opacity-25 bg-cover bg-center" style={{ backgroundImage: "url(/images/still-life.jpg)" }} />
+          <div className="absolute inset-0 opacity-25 bg-cover bg-center" style={{ backgroundImage: "url(/images/interior.jpg)" }} />
           <div className="relative p-10 sm:p-16 lg:p-24 flex flex-col justify-center max-w-4xl">
             <div className="flex items-baseline gap-5 mb-8">
               <span className="label-number !text-cream/40">02</span>
@@ -174,7 +174,7 @@ export default function Page() {
         label="Kurumsal Atölyeler"
         title="Organizasyonel Esenlik Atölyeleri"
         lead='Kurumların insan kaynağını korumak ve psikolojik sermayeyi verimliliğe dönüştürmek için tasarlanmış bilimsel tabanlı "workshop" serileri.'
-        image="/images/kurumsal-warm.jpg"
+        image="/images/kurumsal.jpg"
         reverse
         items={[
           {

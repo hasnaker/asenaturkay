@@ -31,7 +31,7 @@ export default function Page() {
         </div>
         <div className="frame-photo aspect-[3/4] reveal" style={{ animationDelay: "120ms" }}>
           <Image
-            src="/images/abstract-warm.jpg"
+            src="/images/wellness.jpg"
             alt="Sıcak soyut"
             fill
             sizes="(max-width: 1024px) 100vw, 480px"
@@ -47,7 +47,7 @@ export default function Page() {
           <div
             aria-hidden
             className="absolute inset-0 opacity-25 bg-cover bg-center"
-            style={{ backgroundImage: "url(/images/dried-flowers.jpg)" }}
+            style={{ backgroundImage: "url(/images/sunset.jpg)" }}
           />
           <div className="relative">
             <div className="eyebrow !text-cream/60 mb-6">Yakında</div>

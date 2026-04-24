@@ -6,7 +6,7 @@ export default function Footer() {
       <div
         aria-hidden
         className="absolute inset-0 opacity-[0.12] bg-cover bg-center"
-        style={{ backgroundImage: "url(/images/dried-flowers.jpg)" }}
+        style={{ backgroundImage: "url(/images/sunset.jpg)" }}
       />
       <div className="relative container-wide py-20 grid gap-16 lg:grid-cols-[1.4fr_1fr_1fr]">
         <div>

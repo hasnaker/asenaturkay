@@ -49,7 +49,7 @@ export default function Page() {
       </PullQuote>
 
       <ImageBreak
-        src="/images/corner-chair.jpg"
+        src="/images/interior.jpg"
         alt="Sessiz bir köşe"
         height="h-[55vh]"
       />

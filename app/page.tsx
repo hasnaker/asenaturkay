@@ -8,21 +8,21 @@ const services = [
     num: "01",
     title: "Ergen & Genç Yetişkin",
     body: "Kimlik inşası, sınav kaygısı ve dijital dünya denkleminde profesyonel bir pusula.",
-    image: "/images/young-adult.jpg",
+    image: "/images/sunset.jpg",
   },
   {
     href: "/bireysel-danismanlik/yetiskin-psikoterapi",
     num: "02",
     title: "Yetişkin Psikoterapi",
     body: "BDT, Şema Terapi ve Sanat Terapisi sentezi ile derinlemesine çalışma.",
-    image: "/images/window-light.jpg",
+    image: "/images/yetiskin.jpg",
   },
   {
     href: "/bireysel-danismanlik/aile-cift",
     num: "03",
     title: "Aile & Çift",
     body: "İlişkiyi yaşayan bir sistem olarak ele alan; iletişim ve güveni yeniden inşa süreci.",
-    image: "/images/couple-hands.jpg",
+    image: "/images/cift.jpg",
   },
   {
     href: "/bireysel-danismanlik/ebeveyn",
@@ -36,14 +36,14 @@ const services = [
     num: "05",
     title: "Kurumsal Danışmanlık",
     body: "JD-R ve S-BIT modelleriyle organizasyonel esenlik ve liderlik psikolojisi.",
-    image: "/images/kurumsal-warm.jpg",
+    image: "/images/kurumsal.jpg",
   },
   {
     href: "/egitimler",
     num: "06",
     title: "Eğitimler & Atölyeler",
     body: "Şema Terapi, SFBT, Sanat Terapisi eğitimleri; PDR öğrencilerine mentorluk.",
-    image: "/images/workspace-warm.jpg",
+    image: "/images/tea-book.jpg",
   },
 ];
 
@@ -105,8 +105,8 @@ export default function HomePage() {
             </div>
             <div className="frame-photo col-span-3 row-span-3 col-start-1 row-start-3">
               <Image
-                src="/images/hero-botanical.jpg"
-                alt="Botanik doku"
+                src="/images/cift.jpg"
+                alt="Birlikte olmanın ışığı"
                 fill
                 sizes="(max-width: 1024px) 60vw, 350px"
                 className="object-cover"
@@ -114,8 +114,8 @@ export default function HomePage() {
             </div>
             <div className="frame-photo col-span-2 row-span-2 col-start-4 row-start-5">
               <Image
-                src="/images/dried-flowers.jpg"
-                alt="Kuru çiçekler"
+                src="/images/sunset.jpg"
+                alt="Altın saat"
                 fill
                 sizes="(max-width: 1024px) 40vw, 250px"
                 className="object-cover"
@@ -145,7 +145,7 @@ export default function HomePage() {
         <div className="grid gap-16 lg:grid-cols-[1fr_1.2fr] lg:items-center">
           <div className="frame-photo aspect-[3/4]">
             <Image
-              src="/images/still-life.jpg"
+              src="/images/interior.jpg"
               alt="Sessiz bir köşe"
               fill
               sizes="(max-width: 1024px) 100vw, 540px"
@@ -260,7 +260,7 @@ export default function HomePage() {
             </div>
             <div className="frame-photo aspect-[3/4] mt-12">
               <Image
-                src="/images/field-soft.jpg"
+                src="/images/nature.jpg"
                 alt="Kır çiçekleri"
                 fill
                 sizes="(max-width: 1024px) 50vw, 300px"

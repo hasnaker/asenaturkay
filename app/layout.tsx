@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     locale: "tr_TR",
     url: "https://asenaturkay.com",
     siteName: "Asena Türkay",
-    images: ["/images/hero-botanical.jpg"],
+    images: ["/images/cift.jpg"],
   },
   icons: {
     icon: "/favicon.png",

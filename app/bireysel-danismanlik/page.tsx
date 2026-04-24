@@ -15,7 +15,7 @@ const cards = [
     title: "Ergen & Genç Yetişkin",
     body:
       "Kimlik inşası, sınav kaygısı, sosyal medya ve kabul arayışı — genç bireyin fırtınalı denizinde profesyonel bir pusula.",
-    image: "/images/young-adult.jpg",
+    image: "/images/sunset.jpg",
   },
   {
     num: "02",
@@ -23,7 +23,7 @@ const cards = [
     title: "Yetişkin Psikoterapi",
     body:
       "Kaygı, depresyon, burnout ve ilişki kalıpları — semptomların altındaki kökleri BDT ve Şema Terapi ile çalışmak.",
-    image: "/images/window-light.jpg",
+    image: "/images/yetiskin.jpg",
   },
   {
     num: "03",
@@ -31,7 +31,7 @@ const cards = [
     title: "Aile & Çift Danışmanlığı",
     body:
       "İlişkiyi yaşayan bir sistem olarak ele alan; iletişim, güven ve bağın yeniden inşası odaklı süreç.",
-    image: "/images/couple-hands.jpg",
+    image: "/images/cift.jpg",
   },
   {
     num: "04",
