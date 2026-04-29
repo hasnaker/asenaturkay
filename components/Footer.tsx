@@ -29,7 +29,7 @@ export default function Footer() {
           <ul className="space-y-4 text-cream/85 font-sans text-[14px]">
             <li>
               <a
-                href="https://wa.me/905000000000"
+                href="https://wa.me/905301180230"
                 target="_blank"
                 rel="noreferrer"
                 className="group inline-flex items-center gap-3 hover:text-cream"
@@ -37,12 +37,12 @@ export default function Footer() {
                 <span className="flex h-2 w-2">
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#4ADE80]" />
                 </span>
-                <span>WhatsApp · +90 500 000 00 00</span>
+                <span>WhatsApp · +90 530 118 02 30</span>
               </a>
             </li>
             <li>
-              <a href="tel:+902120000000" className="hover:text-cream hover-underline">
-                +90 212 000 00 00
+              <a href="tel:+905301180230" className="hover:text-cream hover-underline">
+                +90 530 118 02 30
               </a>
             </li>
             <li>

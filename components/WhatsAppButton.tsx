@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export default function WhatsAppButton() {
   const [hover, setHover] = useState(false);
-  const phone = "905000000000";
+  const phone = "905301180230";
   const text = encodeURIComponent(
     "Merhaba, asenaturkay.com üzerinden randevu/bilgi almak istiyorum."
   );

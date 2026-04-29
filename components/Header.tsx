@@ -113,7 +113,7 @@ export default function Header() {
               Randevu Al
             </Link>
             <a
-              href="https://wa.me/905000000000"
+              href="https://wa.me/905301180230"
               target="_blank"
               rel="noreferrer"
               onClick={() => setOpen(false)}

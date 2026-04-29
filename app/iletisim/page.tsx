@@ -3,10 +3,10 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const WHATSAPP_NUMBER = "905000000000";
-const WHATSAPP_DISPLAY = "+90 500 000 00 00";
-const PHONE_NUMBER = "902120000000";
-const PHONE_DISPLAY = "+90 212 000 00 00";
+const WHATSAPP_NUMBER = "905301180230";
+const WHATSAPP_DISPLAY = "+90 530 118 02 30";
+const PHONE_NUMBER = "905301180230";
+const PHONE_DISPLAY = "+90 530 118 02 30";
 const EMAIL = "info@asenaturkay.com";
 const ADDRESS_LINE_1 = "Maslak Mah. Büyükdere Cad.";
 const ADDRESS_LINE_2 = "No: — Sarıyer / İstanbul";
